@@ -12,7 +12,7 @@ const app=express();
 app.use(cors());
 app.use(rateLimiter);
 app.use(logger);
-const generatedTOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWJjMTIzIiwibmFtZSI6IlNhd2FzdGlrIEJodWxsYXIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODAyMDIwMDQsImV4cCI6MTc4MDI4ODQwNH0.krKXULTv9cRmsePGt_pwC3uFxWgujbGB_TzLWXcALC4";
+
 
 
 app.use('/api/users',auth,userServiceProxy);
