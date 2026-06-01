@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #111827;
+  font-family: "Plus Jakarta Display", Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.dashboard {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.header-title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #111827;
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.stat-card,
+.chart-section,
+.bottom-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  border: 1px solid #ececec;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.stat-card {
+  padding: 16px 20px;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover,
+.bottom-card:hover {
+  background: #ffffff;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: #111827;
+}
+
+.stat-unit {
+  font-size: 14px;
+  color: #6b7280;
+  margin-left: 4px;
+}
+
+.chart-section {
+  padding: 20px;
+  height: 320px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+}
+
+.bottom-card {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.route-item {
+  margin-bottom: 14px;
+}
+
+.route-item:last-child {
+  margin-bottom: 0;
+}
+
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.route-count {
+  font-weight: 700;
+  color: #111827;
+}
+
+.route-bar-bg {
+  height: 4px;
+  background: #f3f4f6;
+  overflow: hidden;
+}
+
+.route-bar-fill {
+  height: 4px;
+  background: #111827;
+  transition: width 0.3s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+  padding: 10px 0;
+  font-size: 13px;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.method {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  background: #f3f4f6;
+  color: #111827;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-2xx {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.status-4xx {
+  color: #d97706;
+  font-weight: 700;
+}
+
+.status-429 {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.status-5xx {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.duration {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.time {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.connecting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 100vh;
+  color: #6b7280;
+}
+
+.connecting-dot {
+  width: 12px;
+  height: 12px;
+  background: #111827;
+  border-radius: 50%;
+}
+
+.empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+
+  .dashboard {
+    height: auto;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-title {
+    font-size: 26px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+}
