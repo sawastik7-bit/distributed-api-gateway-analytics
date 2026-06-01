@@ -147,3 +147,15 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+# Environment files
+.env
+**/.env
+*.env
+!*.env.example
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Lock files (optional — some people commit these)
+package-lock.json
